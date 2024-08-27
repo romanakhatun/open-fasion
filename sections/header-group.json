@@ -9,8 +9,13 @@
  */
 
 {
-  "current": {
-    "logo": "shopify://shop_images/Logo.png",
-    "content_for_index": []
-  }
+  "type": "header",
+  "name": "Header Group",
+  "sections": {
+    "header": {
+      "type": "header",
+      "settings": {}
+    }
+  },
+  "order": ["header"]
 }

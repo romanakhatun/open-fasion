@@ -9,8 +9,11 @@
  */
 
 {
-  "current": {
-    "logo": "shopify://shop_images/Logo.png",
-    "content_for_index": []
-  }
+  "sections": {
+    "image_banner": {
+      "type": "image-banner",
+      "settings": {}
+    }
+  },
+  "order": ["image_banner"]
 }

@@ -1,0 +1,29 @@
+{%- for collection in section.settings.collection.products  -%}
+
+ {{ collection.featured_image | img_url: 'medium' | img_tag }}
+ <a href="{{ collection.url }}">{{ collection.title }}</a> 
+ <h1>{{ collection.all_tags }}</h1>
+
+{%- endfor -%}
+
+{% schema %}
+  {
+    "name": "collection",
+    "tag": "section",
+    "class": "main_collection",
+    "settings": [
+      {
+        "type": "collection",
+        "id": "collection",
+        "label": "Select Collection"
+      },
+    ],
+    "presets": [
+      {
+        "name": "collection",
+        "settings": {
+        }
+      }
+    ]
+  }
+{% endschema %}
