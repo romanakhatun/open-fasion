@@ -1,0 +1,47 @@
+.wrapper * {
+  position: relative;
+}
+
+.swiper-pagination-bullet {
+  width: 20px;
+  height: 5px;
+  text-align: center;
+  border-radius: inherit;
+  background: none;
+  border: 0.5px solid rgb(252, 252, 252);
+  transform: rotate(45deg);
+}
+
+.swiper-pagination-bullet-active {
+  background: #fff;
+}
+
+swiper-slide img {
+  width: 100%;
+  height: 97vh;
+  object-fit: cover;
+}
+
+.content {
+}
+.explore_btn {
+  border-radius: 30px;
+  backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, 0.4);
+  color: rgb(252, 252, 252);
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 8px 30px 8px 30px;
+  font-size: 16px;
+  font-weight: 400;
+}
+.title {
+  color: rgb(51, 51, 51);
+  font-size: 38.66px;
+  font-weight: 700;
+  text-transform: uppercase;
+  position: absolute;
+  z-index: 9;
+  left: 50%;
+  transform: translateX(-50%);
+}

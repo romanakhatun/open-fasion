@@ -1,1 +1,127 @@
-<h1>Im from image banner</h1>
+{{ 'image-banner.css' | asset_url | stylesheet_tag }}
+
+<swiper-container
+  init="false"
+  autoplay-delay="4000"
+  effect="fade"
+>
+  {%- for block in section.blocks %}
+    {%- if block.type == 'slider' -%}
+      <swiper-slide class="hero_slider">
+        {{ block.settings.slider_img | img_url: 'master' | img_tag }}
+
+        <div class="content">
+          <h1 class="title">{{ section.settings.textarea_heading }}</h1>
+          <a href="#" class="explore_btn">Explore Collection</a>
+        </div>
+      </swiper-slide>
+    {%- endif -%}
+  {%- endfor -%}
+</swiper-container>
+
+{%- javascript -%}
+  const swiperEl = document.querySelector('swiper-container');
+
+  const params = {
+    injectStyles: [
+      `
+      .swiper-pagination-bullet {
+      width: 5px;
+      height: 5px;
+      text-align: center;
+      border-radius: inherit;
+      background: none;
+      border: 0.5px solid rgb(252, 252, 252);
+      transform: rotate(45deg);
+    }
+
+    .swiper-pagination-bullet-active {
+      background: #fff;
+    }
+  `,
+    ],
+    pagination: {
+      clickable: true,
+      renderBullet: (index, className) => {
+        return '<span class="' + className + '"></span>';
+      },
+    },
+  };
+
+  Object.assign(swiperEl, params);
+
+  swiperEl.initialize();
+{%- endjavascript -%}
+
+{% schema %}
+{
+  "name": "Image Banner",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [],
+  "blocks": [
+    {
+      "name": "slider",
+      "type": "slider",
+      "limit": 3,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "slider_img",
+          "label": "slider image"
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "name": "heading",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "textarea_heading",
+          "label": "Title",
+          "default": "Luxury fashion & Accessories"
+        }
+      ]
+    },
+    {
+      "type": "buttons",
+      "name": "buttons",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "button_label_1",
+          "default": "Button label",
+          "label": "Button Text"
+        },
+        {
+          "type": "url",
+          "id": "button_link_1",
+          "label": "Button Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image Banner",
+      "settings": {},
+      "blocks": [
+        {
+          "type": "slider"
+        },
+        {
+          "type": "buttons"
+        },
+        {
+          "type": "heading"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

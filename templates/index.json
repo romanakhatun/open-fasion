@@ -1,19 +1,38 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
-
 {
   "sections": {
     "image_banner": {
       "type": "image-banner",
-      "settings": {}
+      "blocks": {
+        "slider_y633JJ": {
+          "type": "slider",
+          "settings": {
+            "slider_img": "shopify:\/\/shop_images\/image_10.png"
+          }
+        },
+        "slider_Bf8kPF": {
+          "type": "slider",
+          "settings": {
+            "slider_img": "shopify:\/\/shop_images\/pexels-kowalievska-1055691.jpg"
+          }
+        },
+        "slider_cY9TGN": {
+          "type": "slider",
+          "settings": {
+            "slider_img": "shopify:\/\/shop_images\/pexels-arnie-chou-304906-1557843.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "slider_y633JJ",
+        "slider_Bf8kPF",
+        "slider_cY9TGN"
+      ],
+      "settings": {
+        "textarea_heading": "Luxury fashion & Accessories"
+      }
     }
   },
-  "order": ["image_banner"]
+  "order": [
+    "image_banner"
+  ]
 }
